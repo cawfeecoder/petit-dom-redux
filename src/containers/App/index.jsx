@@ -9,7 +9,7 @@ const styles = require('./styles.styl');
 class App extends Component {
 
     constructor(props){
-        super(props, null, initialState);
+        super(props);
         this.todos = [];
         this.styles = styles;
         this.count = 0;
@@ -33,6 +33,7 @@ class App extends Component {
             store.dispatch(actions.add_todo({id: this.todos.length, content: e.target.value, complete: false}))
             e.target.value = "";
         }
+        this.count += 1;
         this.update();
     }
 
@@ -68,6 +69,7 @@ class App extends Component {
                     <p> Written by Nicholas Frush </p>
                     <p> TodoMVC Example </p>
                 </div>
+                <Counter count={this.count}/>
             </div>
         </div>
         )

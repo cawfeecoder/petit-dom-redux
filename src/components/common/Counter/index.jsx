@@ -7,7 +7,7 @@ const styles = require('./styles.styl');
 export default class Counter extends Component {
 
     constructor(props){
-        super();
+        super(props);
         this.props = props;
         this.styles = styles;
         this.steps = 0;

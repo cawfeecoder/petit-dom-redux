@@ -9,11 +9,11 @@ var componentState = {
 
 export default class Component {
 
-    constructor(props = {}, content, state){
+    constructor(props = {}, content = null, state = {}){
         this._tag = "x-" + this.constructor.name.toLowerCase();
-        this.props = props || {};
-        this.content = content || null;
-        state = state || {};
+        this.props = props;
+        this.content = content
+        state = state;
         componentState = merge(componentState, state);
         Object.freeze(componentState);
         Object.freeze(this.state);
@@ -33,6 +33,9 @@ export default class Component {
     }
     
     patch(node, props, oldProps, content, oldContent){
+        if(!equal(props, oldProps) && this.componentWillReceiveProps){
+            this.componentWillReceiveProps();
+        }
         this.props = props;
         this.content = content;
         this.update();
