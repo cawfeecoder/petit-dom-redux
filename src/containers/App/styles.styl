@@ -1,0 +1,129 @@
+.rootContainer
+    width 100vw
+    height 100%
+    min-width 450px
+    min-height 600px
+    display flex
+    background rgba(240, 240, 240, 1)
+
+@media screen and (max-width: 900px)
+    .infoContainer
+        display none
+    
+    .todoContainer
+        width 100vw
+        height 100vh
+        display flex
+        flex-direction column
+
+@media screen and (min-width: 901px)
+    .infoContainer
+        width 250px
+        height 1000px
+        background white
+        margin 10px 0px 0px 0px
+        padding 15px
+
+    .todoContainer
+        width calc(80vw - 250px)
+        margin 0 auto 0 auto
+        height 100vh
+        display flex
+        flex-direction column
+
+.infoContainer > h3 
+    font-family Arial
+    font-weight lighter
+
+.todoContainer > h1
+    color rgba(175, 47, 47, 0.15)
+    font-size 6em
+    font-family Arial
+    font-weight lighter
+    margin-top 10px
+    margin-bottom 10px
+    text-align center
+
+.todoContainer > div
+    width 70%
+    margin 0 auto 0 auto
+
+.todoInputContainer
+    width 100%
+    background white
+    margin 0 auto 0 auto
+    display flex
+    justify-content flex-end
+
+.todoInputContainer > input 
+    width 89%
+    font-size 1.5em
+    padding 17px 0px 17px 0px
+    border none
+    background none
+
+    &:focus
+        outline none
+
+    &::placeholder
+        font-weight lightest
+        color rgba(220, 220, 220, 1)
+        font-family Arial
+        font-style italic
+        font-size 1.5rem
+
+.todoInputListContainer
+    box-shadow 0px 3px 10px 0px rgba(0, 0, 0, 0.2)
+
+.textContainer
+    width 100%
+    margin-top 60px
+
+.textContainer > p
+    font-size 0.6em
+    font-family Arial
+    margin 5px 0px 5px 0px
+    text-align center
+    color rgba(175, 175, 175, 1)
+
+.todoListContainer
+    background white
+    padding 20px
+    margin: 0 auto 0 auto
+    border-top 1px solid lightgrey
+    box-shadow 0px -1px 5px 0px rgba(0, 0, 0, 0.10)
+
+.footerContainer > div:nth-child(1)
+    background: white;
+    height: 20px;
+    border-top: 1px solid rgba(200, 200, 200, 1);
+    box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.1);
+    z-index: 3;
+    padding 5px
+    position: relative;
+
+.footerContainer > div:nth-child(2)
+    background: white;
+    height: 4px;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: none;
+    box-shadow: 0px 3px 5px 3px rgba(0,0,0,0.1)
+    z-index: 2;
+    position: relative;
+
+.footerContainer > div:nth-child(3)
+    background: white;
+    height: 4px;
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: none;
+    z-index: 1;
+    box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+
+.itemsLeftText
+    margin 0
+    margin-left 10px
